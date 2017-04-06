@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title> WHITESPACE - HOME</title>
-	<link rel="stylesheet" type="text/css" href="cssnorm.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="/public/styles/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Damion|Open+Sans|Raleway" rel="stylesheet">
 	<script src="https://use.fontawesome.com/4fe2bf7b28.js"></script>
 	
@@ -15,126 +14,236 @@
 </head>
 
 <body>
-<header>
+<header id="top">
 	<div class="headerHome">
 		<div class="dim">
-			<nav class="mainNav">
+			<!-- main nav -->
+			<nav class="mainNav clearfix">
 				<nav class="navLogo left">
-					<img src="home/assets/logo.png" alt="WhiteSpace" class="logo">
+					<a href="#top"><img src="home/assets/logo.png" alt="WhiteSpace" class="logo"></a>
 				</nav>
 				<nav class="navLeft left">
-					<span class="navStatic">home</span>
-					<a href="faq.html">faq</a>
-					<a href="#">portfolio</a>
-					<a href="#">blog</a>
-					<a href="contact.html"  >contact</a>
+					<a href="#portfolio">portfolio</a>
+					<a href="#testimonials">Testimonials</a>
+					<a href="#services">services</a>
+					<a href="#subscribe">subscribe</a>
 				</nav>
 				<nav class="navRight right">
+					<a href="faq.html">faq</a>
+					<a href="contact.html">contact</a>
 					<a href="#"><i class="fa fa-globe" aria-hidden="true"></i>  
 					Eng</a>	
 					<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
 				</nav>
-			</nav>
+			</nav><!-- main nav -->
 
-			<nav class="mobileNav">
-				<nav class="navLogo">
-					<a href="index.html"><img src="home/assets/logo.png" alt="WhiteSpace" class="logo"></a>
-				</nav>
-				<nav class="navRight">
-					<p>
-						<span class="navStatic">home</span>
-						<a href="faq.html">faq</a>
-						<a href="#">portfolio</a>
-						<a href="#">blog</a>
-						<a href="contact.html"  >contact</a>
-					</p>
-					<p>
-						<a href="#"><i class="fa fa-globe" aria-hidden="true"></i>  
-						Eng</a>	
-						<a href="#"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
-					</p>
-				</nav>
+			<nav class="navSideBar">
+				<ul>
+					<li><a href="#top" class="clearfix">
+						<div class="navLine navLineLight"></div>
+						<div class="navLabel navLabelLight">Home</div>
+					</a></li>
+					<li><a href="#portfolio" class="clearfix">
+						<div class="navLine navLineLight"></div>
+						<div class="navLabel navLabelLight">portfolio</div>
+					</a></li>
+					<li><a href="#testimonials" class="clearfix">
+						<div class="navLine navLineLight"></div>
+						<div class="navLabel navLabelLight">Testimonials</div>
+					</a></li>
+					<li><a href="#services" class="clearfix">
+						<div class="navLine navLineLight"></div>
+						<div class="navLabel navLabelLight">services</div>
+					</a></li>
+					<li><a href="#subscribe" class="clearfix">
+						<div class="navLine navLineLight"></div>
+						<div class="navLabel navLabelLight">subscribe</div>
+					</a></li>
+				</ul>
 			</nav>
 
 			<div class="headerWrapper">
-				<h2> Trendy, Minimal versatile solition to style up your business </h2>
-				<h1> designer, photographer, developer. </h1>
-				<div class="headerButton">
-					<a href="#"> more info</a>
+				<div class="headerText">
+					<h2> Trendy, Minimal versatile solition to style up your business </h2>
+					<h1> designer, photographer, developer. </h1>
+					<div class="headerButton">
+						<a href="#"> more info</a>
+					</div>
 				</div>
 			</div>	<!-- headerWrapper -->
 			
 			<div class="scroll">
-				<img src="home/assets/scroll.png" alt="scroll icon">
+				<a href="#portfolio"><img src="home/assets/scroll.png" alt="scroll icon"></a>
 			</div>
 		</div> <!-- dim -->
 	</div> <!-- headerHome -->
 </header>
 
 
-<section class="sectionGrey">
-	<div class="sectionSmall">
+<section class="sectionGrey" id="portfolio">
+	<div class="sectionSmall" id="alsoPortfolio">
 		<h3> Selected works of stephen barnes </h3>
 		<img src="home/assets/waves.png" class="waves" alt="waves">
 		<p class="description"> 
 			Design is the enabler of the digital era - it's a process that creates order out of chaos, that renders technology useable to business. Design means being good, not just looking good. 
 		</p>
 	</div>
-	<div class="selectedGallery contentWrapper">
-		<div class="arrowDiv">
-			<div class="arrowLeft left"> 
-				<a href="#"><i class="fa fa-angle-left arrow" aria-hidden="true"></i></a>
-			</div>
-			<div class="arrowRight right"> 	
-				<a href="#">
-					<i class="fa fa-angle-right arrow" aria-hidden="true"></i>
+
+	<div id="selectedGallery">
+		<div class="arrowLeft"><i class="fa fa-angle-left arrow" aria-hidden="true"></i>
+		</div>
+		<div class="arrowRight"><i class="fa fa-angle-right arrow" aria-hidden="true"></i>
+		</div>
+		<ul class="clearfix">
+			<li class="gallerySlide gallerySlide1">		
+				<p class="imgCaption"> Custom websites 1<br />
+				<span class="smallCaption"> web design </span>
+			</li>
+			<li class="gallerySlide gallerySlide2">		
+				<p class="imgCaption"> Custom design 2<br />
+				<span class="smallCaption"> web design </span>
+			</li>
+			<li class="gallerySlide gallerySlide3">		
+				<p class="imgCaption"> Custom websites 3<br />
+				<span class="smallCaption"> web design </span>
+			</li>
+			<li class="gallerySlide gallerySlide2">		
+				<p class="imgCaption"> Custom websites 4<br />
+				<span class="smallCaption"> web design </span>
+			</li>
+		</ul> 
+	</div> <!--selectedGallery-->
+	<div class="sixGallery contentWrapper clearfix" id="portfolioGallery">
+		<div class="sixImgs1 sixImgs">
+			<div class="sixDim">
+				<a href="#portfolioGallery">
+					<p class="sixTitle">
+					<span class="smallCaption"> Outdoor Space</span>
+					</p> 
 				</a>
 			</div>
 		</div>
-		<p class="imgCaption"> Custom websites <br />
-		<span class="smallCaption"> web design </span>
-		</p>
-	</div> <!--selectedGallery-->
+
+		<div class="sixImgs2 sixImgs">
+			<div class="sixDim">
+				<a href="#portfolioGallery">
+					<p class="sixTitle">
+					<span class="smallCaption">White Space</span>
+					</p> 
+				</a>
+			</div>
+		</div>
+
+		<div class="sixImgs3 sixImgs">
+			<div class="sixDim">
+				<a href="#portfolioGallery">
+					<p class="sixTitle">
+					<span class="smallCaption">Glasses Space</span>
+					</p> 
+				</a>
+			</div>
+		</div>
+
+		<div class="sixImgs4 sixImgs">
+			<div class="sixDim">
+				<a href="#portfolioGallery">
+					<p class="sixTitle">
+					<span class="smallCaption">Computer Space</span>
+					</p> 
+				</a>
+			</div>
+		</div>
+
+		<div class="sixImgs5 sixImgs">
+			<div class="sixDim">
+				<a href="#portfolioGallery">
+					<p class="sixTitle">
+					<span class="smallCaption">Mustard Space</span>
+					</p>
+				</a>
+			</div>
+		</div>
+
+		<div class="sixImgs6 sixImgs">
+ 			<div class="sixDim">
+				<a href="#portfolioGallery">
+					<p class="sixTitle">
+					<span class="smallCaption">Book Space</span>
+					</p>
+				</a>
+			</div>
+		</div>
 	<p class="greyCaption sectionSmall">
-		view portfolio
+		<a href="#alsoPortfolio" id="closePortfolio"> close portfolio</a>
+	</p>
+	</div> <!-- sixGallery contentWrapper clearfix -->
+
+
+	<p class="greyCaption sectionSmall" id="viewPortfolioTab">
+		<a href="#portfolioGallery" id="viewPortfolio"> view portfolio</a>
 	</p>
 </section>
 
-<section class="sectionWhite clearfix">
-	<div class="sectionLeft left">
+<section class="sectionWhite" id="testimonials">
+	<div class="sectionLeft">
 		<h2> Recognition determines success</h2>
 		<h1> Clients' testimonials</h1>
 		<img src="home/assets/waves.png" class="waves" alt="waves">
-		<p class="description">
-			Design is how you treat your customers. if you treat them well form an environmental, emotional and aesthetic standpoint, you're probably doing good design.
-		</p>
-		<div class="ryanFace"> insert Ryan's face here </div>
-		<p class="description">
-			Losing 80% of your screen space forces you to focus. You need to make sure that whay stays on the screen is the most important set of features for your customers and your business. There simply isn't room for any interface debris or content of questionable value. You need to know what matters most.
-		</p>
-		<img src="home/assets/banner.png" alt="banner">
-		<p class="ryan">Ryan christiani<br />
-			<span class="smallCaption">designer </span>
-		</p>
+
+		<div class="testimonials" id="testimonialsOne">
+			<p class="description">
+				Design is how you treat your customers. if you treat them well form an environmental, emotional and aesthetic standpoint, you're probably doing good design.
+			</p>
+			<div class="clientFace"> ryan </div>
+			<p class="description">
+				Losing 80% of your screen space forces you to focus. You need to make sure that whay stays on the screen is the most important set of features for your customers and your business. 
+			</p>
+			<img src="home/assets/banner.png" alt="banner">
+			<p class="clientName">Ryan christiani<br />
+				<span class="smallCaption">da Boss </span>
+			</p>
+		</div>
+
+		<div class="testimonials" id="testimonialsTwo">
+			<p class="description">
+				There simply isn't room for any interface debris or content of questionable value. You need to know what matters most.
+			</p>
+			<div class="clientFace"> Sylvia </div>
+			<p class="description">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam accusantium, maiores deleniti reiciendis meow.
+			</p>
+			<img src="home/assets/banner.png" alt="banner">
+			<p class="clientName">Sylvia Nguyen<br />
+				<span class="smallCaption">design wiz</span>
+			</p>
+		</div>
+
+		<div class="testimonials" id="testimonialsThree">
+			<p class="description">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ea totam soluta.
+			</p>
+			<div class="clientFace"> Simon</div>
+			<p class="description">
+				I wanna be the very best that no one ever was, to catch them is my real test to train them is my cause, I will travel across the world searching far and wide, each pokemon to understand the power thats inside.
+			</p>
+			<img src="home/assets/banner.png" alt="banner">
+			<p class="clientName">Simon Bloom<br />
+				<span class="smallCaption">Pokemon Master </span>
+			</p>
+		</div>
+
+
 		<p class="lineLinks">
-			<a href="" class="inactive">&#8212</a>
-			<a href="">&#8212</a>
-			<a href="">&#8212</a>
+			<a href="#testimonialsOne" class="testimonialsLinks current">&#8212</a>
+			<a href="#testimonialsTwo" class="testimonialsLinks">&#8212</a>
+			<a href="#testimonialsThree" class="testimonialsLinks">&#8212</a>
 		</p>
 	</div>
-
-	<div class="sectionRight right sectionimac">
-		<p class="sectionRightLines lineLinks">
-			<a href="">&#8212</a>
-			<a href="">&#8212</a>
-			<a href="" class="inactive">&#8212</a>
-			<a href="">&#8212</a>
-			<a href="">&#8212</a>
-		</p>
+	<div class="sectionRight sectionimac">
 	</div>
 </section>
 
-<section class="sectionGrey">
+<section class="sectionGrey" id="services">
 	<div class="sectionSmall">
 		<h3> services i provide </h3>
 		<img src="home/assets/waves.png" class="waves" alt="waves">
@@ -192,21 +301,21 @@
 		</div>
 	</div> <!-- sixGallery contentWrapper clearfix -->
 	<p class="greyCaption sectionSmall">
-		get in touch
+		<a href="contact.html"> get in touch</a>
 	</p>
 </section>
 
-<section class="sectionWhite clearfix">
-	<div class="sectionLeft left clearfix">
-		<h2> Always open to new opportunities</h2>
-		<h1> get in touch with me</h1>
+<section class="sectionWhite" id="subscribe">
+	<div class="sectionLeft">
+		<h2>Interested in hearing more?</h2>
+		<h1> get updates on our projects</h1>
 		<img src="home/assets/waves.png" class="waves" alt="waves">
 		<p class="description">
 			Design is how you treat your customers. if you treat them well form an environmental, emotional and aesthetic standpoint, you're probably doing good design.
 		</p>
 
-		<div class="seventy clearfix">
-			<p class="homeContact contactBox left">
+		<div class="seventy">
+			<p class="homeContact contactBox">
 				<input type="text" placeholder="your email" maxlength="500" class="input">
 			</p>
 			<p class="contactButton right">
@@ -231,8 +340,7 @@
 					Phone:
 				</p>
 				<p class="contactCol2">
-					+ 1 (800) 456 37 96 - Office <br />
-					+ 1 (800) 617 28 32 - Fax
+					+ 1 (800) 456 37 96
 				</p>
 				<p class="contactCol1">
 					Follow Me:
@@ -242,25 +350,24 @@
 					<a href="#"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a>
 					<a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
 					<a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"> </i></a>
-					<a href="#"><i class="fa fa-behance-square" aria-hidden="true"> </i></a>
 					<a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"> </i></a>
 					<a href="#"><i class="fa fa-instagram" aria-hidden="true"> </i></a>
 				</p> 
 			</div> <!-- contactInfo -->
 		</div> <!-- seventy clearfix  -->
 	</div> <!-- sectionLeft left clearfix -->
-	<div class="sectionRight right sectionlegs">
-		<p class="sectionRightLines lineLinks">
-			<a href="">&#8212</a>
-			<a href="">&#8212</a>
-			<a href="">&#8212</a>
-			<a href="">&#8212</a>
-			<a href="" class="inactive">&#8212</a>
-		</p>
-	</div>
+	<div class="sectionRight sectionlegs"></div>
 </section>
 
+<footer>
+	<div class="contentWrapper clearfix">
+		<p class="bottomLeft"> Copyright &copy 2020 WhiteSpace. All Rights Reserved.</p>
+		<p class="bottomRight">Multi-Purpose Non-WordPress Theme by Not GT3Themes.com</p>
+	</div>
+</footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/public/scripts/script.js"></script>
 </body>
 
 </html>
