@@ -1,9 +1,10 @@
 
-/// SLIDE IMAGES NOT RESPONSIVE WHEN PERCENTAGES OR VW.
-// WHY IS CONTENT WRAPPER WIDTH STATIC... OH WAIT ITS JUST NOT RESPONSIVE.	
+var index = []
+var contact =[]
+var faq = []
 
 var slider = {}
-
+slider.pages = function(){
 	$('#selectedGallery ul li:last-child').prependTo('#selectedGallery ul');
 
 	var moveLeft = function() {
@@ -26,9 +27,8 @@ var slider = {}
 
 	$('.arrowRight').on("click", function () {
 		moveRight();
-	}); 
-
-
+	}); 	
+}
 
 var portfolio ={};
 portfolio.pages = function(){
@@ -43,19 +43,7 @@ portfolio.pages = function(){
 	});
 };
 
-var faq ={};
-
-faq.pages = function(){
-	$("a.faqPlus").on("click", function() {
-			var targetPage = $(this.hash)
-			$(".faqAnswers").hide();
-			console.log(targetPage);
-			targetPage.show();
-	});
-};
-
 var testimonial ={};
-
 testimonial.pages = function(){
 	$("#testimonialsOne").show();
 	$("a.testimonialsLinks").on("click", function() {
@@ -102,7 +90,6 @@ for (var i = 0; i < navItems.length; i++) {
 	navHrefs.push(currentNav.href);
 }
 console.log(navHrefs);
-
 currentNav.scrollEffect = function () {
 	//when scrolling
 	$(window).on('scroll', function () {
@@ -119,9 +106,7 @@ currentNav.scrollEffect = function () {
 
 		currentNav.testimonialsPosition = $("#testimonials").offset().top  - $("#testimonials").height()/2;
 		currentNav.testimonials = $("#testimonials").height() + currentNav.testimonialsPosition;
-
 		// console.log(currentNav.windowPosition, currentNav.testimonialsPosition , currentNav.testimonials)
-
 			if (currentNav.windowPosition >= currentNav.topPosition && currentNav.windowPosition < currentNav.top) {
 				$(".navLine").addClass('navLineLight');
 				$(".navLabel").addClass('navLabelLight');
@@ -133,7 +118,6 @@ currentNav.scrollEffect = function () {
 				$(".navLine").removeClass('navLineLight');
 				$(".navLabel").removeClass('navLabelLight');
 			} 
-
 		// make nav a current when href matches section id (when specific section is top of pg)
 		for (var i = 0; i < navHrefs.length; i++) {
 			var sectionId = navHrefs[i];
@@ -154,13 +138,72 @@ currentNav.scrollEffect = function () {
 	});
 };
 
+var menu = {}
+menu.collapse = function(){
+	$('.faqItem').on('click',function(e){
+		e.preventDefault();
+		$(this).toggleClass('active');
+	});
+}
 
+var burgerMenu = {}
+burgerMenu.collapse = function(){
+	$('#burgerMenu').on('click',function(e){
+		e.preventDefault();
+		$(".indexNav").slideToggle();
+	})
 
-//gotta call dat
-$(function () {
+	$(".navLeft a, section, .headerWrapper, .logo").on("click", function(){
+		if($(window).width() < 480){
+			$(".indexNav").slideUp();
+		}
+	});
+
+	$(window).on("resize", function(){
+		if($(window).width() > 480){
+			$(".indexNav").show();
+		}
+	})
+
+}
+
+/////i n i t !!!
+
+index.init = function () {
 	currentNav.scrollEffect();
 	currentNav.smoothScroll();
 	portfolio.pages();
 	testimonial.pages();
-	faq.pages();
-});
+	slider.pages();
+	burgerMenu.collapse();
+};
+
+faq.init = function(){
+	menu.collapse();
+}
+
+contact.init = function(){
+	currentNav.smoothScroll();
+	burgerMenu.collapse();
+}
+
+////calling that init!
+
+if($("body#index").length > 0){
+	$(function () {
+		index.init();
+	});
+}
+
+if($("body#faq").length > 0){
+	$(function () {
+		faq.init();
+	});
+}
+
+if($("body#contact").length > 0){
+	$(function () {
+		contact.init();
+	});
+}
+

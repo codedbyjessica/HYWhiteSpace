@@ -154,14 +154,13 @@ nav{
 	float: right;
 }
 
-.navStatic{
-	color: $mainColor;
-}
-
 .navRight a, .faqNavRight a{
 	margin-left: 10px;
 }
 
+#burgerMenu{
+	display:none;
+}
 
 //navsidebar
 nav.navSideBar {
@@ -169,7 +168,7 @@ nav.navSideBar {
 	z-index: 99;
 	position: fixed;
 	right: -120px;
-	top: 40vh;
+	top: 45vh;
 	-ms-transform: rotate(90deg);
 	-webkit-transform: rotate(90deg); 
 	transform: rotate(90deg);
@@ -316,15 +315,9 @@ nav.navSideBar {
 	margin:0 auto;
 }
 
-.seventy {
+.contactMain {
 	width: 70%;
 	margin:0 auto;
-}
-
-.seventyCol {
-	width: 70%;
-	margin:0 auto;
-	float: left;
 }
 
 #portfolio{
@@ -510,18 +503,15 @@ nav.navSideBar {
 	background-position: center;
 	width: 32.33%;
 	float:left;
-}
-
-.sixImgs:nth-of-type(3n + 1) {
-	margin: 1% 1% 1% 0;
-}
-
-.sixImgs:nth-of-type(3n + 2) {
-	margin: 1% 0.5%;
-}
-
-.sixImgs:nth-of-type(3n) {
-	margin: 1% 0 1% 1%;
+	&:nth-of-type(3n + 1) {
+		margin: 1% 1% 1% 0;
+	}
+	&:nth-of-type(3n + 2) {
+		margin: 1% 0.5%;
+	}
+	&:nth-of-type(3n) {
+		margin: 1% 0 1% 1%;
+	}
 }
 
 .sixImgs1{
@@ -623,6 +613,10 @@ nav.navSideBar {
 	padding: 30px 0;
 	text-align: left;
 	text-transform: uppercase;
+	.contactMain{
+		margin:0;
+		float:left;
+	}
 }
 
 .secondaryLeft {
@@ -820,6 +814,7 @@ footer{
 	padding: 14px 0;
 	background-color: #2a2b30;
 	color:$neutralColor;
+	text-align: center;
 }
 
 .topLeft{
@@ -830,15 +825,6 @@ footer{
 	float: right;
 	margin-right: -4px;
 }
-
-.bottomRight{
-	float: right;
-}
-
-.bottomLeft{
-	float: left;
-}
-
 
 /*FAQ SPECIFIC*/
 
@@ -866,8 +852,9 @@ footer{
 	margin-left: 15px;
 }
 
-.fa-phone:before{
-	margin-left:0;
+.faqMain{
+	width: 70%;
+	float:left;
 }
 
 .faqSecondary {
@@ -881,8 +868,7 @@ footer{
 	margin-bottom:40px;
 }
 
-.girlphone2 img{
-	width:100%;
+.girlphonemobile{
 	display: none;
 }
 
@@ -907,7 +893,7 @@ footer{
 }
 
 .bannerspot {
-	padding: 100px 0;
+	padding: 70px 0;
 	background-color: #000;
 	color:#fff;
 	text-transform: uppercase;
@@ -931,303 +917,352 @@ footer{
 	color:#FFF;
 }
 
+.faqItem {
+	position: relative;
+	cursor: pointer;
+	padding: 10px 0;
+	margin:0px;
+	max-height:70px;
+	overflow:hidden;
+	transition: max-height 4s;
+ 	&:after{
+		content: "+";
+		text-align:center;
+		position:absolute;
+		font-size: 20px;
+		width:15px;
+		height:15px;
+		right:10px;
+		top:24px;
+	}
+}
+
+.faqItem.active{
+	z-index: 200;
+	max-height:3000px;
+	transition: max-height 4s;
+ 	&:after{
+		content: "-";
+ 	}
+}
+
 .faqQuestions {
 	padding: 8px;
+	padding-right: 20px;
 	border: 2px solid #000;
 	font-weight: bold;
 	letter-spacing: 2px;
-	margin: 5px 0;
+	margin: 10px 0;
 	text-transform: uppercase;
 }
 
 .faqAnswers {
-	padding: 5px 10px 10px 10px;
+	padding: 20px 10px;
 	text-transform: none;
 }
 
-.faqMinus, .faqPlus{
-	padding: 0 5px;
-}
-
 .recentPostsMid {
 	display:none;
 }
 
-@media screen and (max-width: 1150px) {
-.footerContactCol1, .footerContactCol2 {
-	width:100%;
-	padding: 0;
+@media (max-width: 1280px) {
+	.sectionLeft {
+		width: 70%;
+	}
+
+	.sectionRight {
+		width: 30%;
+	}
 }
 
+@media (max-width: 940px) {
+	.bannerspot {
+		padding: 50px 0;
+	}
+
+	////contactpage 
+	.secondaryCol1, .secondaryCol2{
+		padding: 0;
+	}
+
+	.secondaryCol1 {
+		width:100%;
+	}
+
+	.secondaryCol2 {
+		width:100%;
+		padding-right:0;
+		padding-bottom: 10px;
+	}
+	.secondaryInfo {
+		width:100%;
+		padding-left: 0px;
+		float: left;
+		padding-top: 20px;
+		.contactBox{
+			display: none;
+		}
+	}
+	.girlphone{
+		display: none;
+	}
+	.girlphonemobile{
+		display: block;
+	}
+	.girlphonemobile img{
+		width:100%;
+		display: block;
+	}
+	.recentPosts{
+		.footerContactCol1, .footerContactCol2{
+			float:left;
+			clear:none;
+			margin:0;
+			padding: 0;
+		}
+		.footerContactCol1{
+			width: 10%;
+
+		}
+		.footerContactCol2{
+			width: 23%;
+		}
+	}
+	.secondaryCol1 {
+		width:30%;
+		font-style:italic;
+		color: $neutralColor;
+	}
+
+	.secondaryCol2 {
+		width:70%;
+		padding-right:20px;
+		clear:right;
+		text-align: right
+	}
+	.faqMain, .contactMain{
+		width: 100%;
+	}
+
+	.shameWrapper{
+		width: 60vw;
+	}
+/*FOOTER SPECIFIC*/
+	.footer{
+		display: none;
+	}
+
+	.bottomRight, .bottomLeft{
+		text-align: center;
+		float: none;
+	}
 }
 
-@media screen and (max-width: 850px) {
+@media (max-width: 768px) {
+	h1 {
+		font-size: 24px;
+		padding: 0;
+		margin:0;
+	}
 
-.sectionLeft {
-	margin: 0 auto;
-	width: 100%;
-	position: relative;
-	top: 0;
-	transform: translateY(0);
-	padding:40px 0;
-	background-color: $lightColor;
+	h2 {
+		font-size: 18px;
+		font-family: 'Damion', cursive;
+		text-transform: capitalize;
+		font-weight: normal;
+	}
+
+	.sectionSmall{
+		width: 70%;
+	}
+	.sectionLeft {
+		width: 100%;
+	}
+
+	.sectionRight {
+		display: none;
+	}
+	
+	/////nav
+	nav{
+		text-align:center;
+	}
+
+	.logo {
+		max-width: 100px;
+	}
+
+	.navLogo, .navLeft, .navRight{ 
+		padding:0;
+		padding-top: 10px;
+		float:none;
+	}
+
+	.navLogo{
+		padding-top: 20px;
+	}
+
+	.navLeft a{
+		margin: 0 5px;
+	}
+
+	///gallery	
+	.sixImgs{
+		width: 49%;
+		padding:0;
+		&:nth-of-type(3n + 1) {
+			margin: 0;
+		}
+		&:nth-of-type(3n + 2) {
+			margin: 0;
+		}
+		&:nth-of-type(3n) {
+			margin: 0;
+		}
+		&:nth-of-type(2n + 1) {
+			margin: 0%;
+			margin-right: 2%;
+		}
+		&:nth-of-type(n) {
+			margin-top: 2%;
+		}
+	}
+
+	.faqNavRight a, .faqTopNav a:before{
+		margin: 0 4px;
+	}
+
+	.faqNavTopLeft{
+		display: none;
+	}
+
+	.faqNavTopRight, .faqNavRight, .faqNavLogo{
+		float:none;
+		padding: 0;
+	}
+
+	.faqNavLogo{
+		margin-top: 10px;
+	}
+
+	nav.navSideBar {
+		display: none;
+	}
+
+
+
+	.faqItem {
+		max-height:80px;
+	}
 }
 
-.sectionRight {
-	display:none;
-}
-
-.sectionimac, .sectionlegs {
-	height: 90vh;
-	min-height: 600px;
-}
-
-.sixImgs{
- 	width: 48%;
-}
-
-.sixImgs:nth-of-type(n) {
-	margin: 1%;
-}
-
-.sixTitle{
-	padding: 80px 0;
-	color: $lightColor;
-}
-
-.seventyCol {
-	width: 100%;
-	margin:0 auto;
-}
-
-.secondaryInfo {
-	width:100%;
-	padding-left: 0;
-	margin-top: 20px;
-}
-
-.secondaryCol1 {
-	width:15%;
-}
-
-.secondaryCol2 {
-	width:35%;
-}
-
-.map iframe{
-	height:400px;
-}
-
-.recentPosts {
-	display:none;
-}
-
-.recentPostsMid {
-	display:block;
-}
-
-.recentPostCol1 {
-	width:10%;
-	clear:none;
-}
-
-.recentPostCol2 {
-	width:23%;
-	clear:none;
-}
-
-.girlphone img{
-	display: none;
-}
-
-.girlphone2 img{
-	display: block;
-}
-
-footer .left, footer .right{
-	float: none;
-	text-align: center;
-}
-
-}
+@media (max-width: 480px) {
+	.indexStickyBar, .indexNav{
+		z-index: 9;
+		position: fixed;
+		width: 100%;
+		background-color: rgba(106,106,106,0.9);
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.indexStickyBar{
+		padding-bottom: 12px; 
+	}
+	.indexNav{
+		display: none;
+		margin-top: 12px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid white;
+		.navLeft a{
+			display: block;
+			margin: 10px 0;
+		}
+	}
+	#burgerMenu{
+		display: inline;
+		position: absolute;
+		top: 8px;
+		right: 10px;
+		font-size: 26px;
+		&:hover{
+			cursor: pointer;
+		}
+	}
 
 
 
-@media screen and (max-width: 750px) {
-.mainNav {
-	display:none;
-}
+	.headerText{
+		margin-top: 5vh;
+	}
 
-.navLeft, .navRight, .navLogo{
-	float: none;
-}
+	///gallery
+	.sixImgs{
+		width: 100%;
+		&:nth-of-type(2n + 1) {
+			margin: 0%;
+			margin-right: 0;
+		}
+		&:nth-of-type(n) {
+			margin-top: 2%;
+		}
+	}
+	.shameWrapper{
+		width: 70vw;
+	}
 
-.navStatic{
-	margin-left: 10px;
-}
+	#selectedGallery {
+		height: 250px;
+	}
 
-.mobileNav{
-	display:block;
-	text-align: center;
-	text-transform: uppercase;
-}
+	#selectedGallery ul li {
+		height: 250px;
+	}
 
-.mobileNav a{
-	color:#fff;
-}
+	.arrowLeft, .arrowRight {
+		top: 125px;
+	}
 
-.mobileNav a:hover{
-	color:$mainColor;
-}
+	.gallerySlide{
+		height:250px;
+	}
 
-.faqMobileNav{
-	display:block;
-	text-align: center;
-	text-transform: uppercase;
-	padding:20px;
-}
+	.contactCol1, .contactCol2{
+		line-height: 2;
+		height:auto;
+	}
 
-.faqMobileNav a{
-	color:#000;
-	padding-left:10px;
-}
+	.contactCol1 {
+		width:40%;
+	}
 
-.faqMobileNav a:hover{
-	color:$mainColor;
-}
-
-.faqMobileNav span{
-	display:block;
-	text-transform: none;
-}
-
-.faqMobileNav span.fa{
-	margin: 0;
-	padding: 0;
-}
-
-.faqMobileLogo{
-	margin: 10px 0
-}
-
-}
-
-
-@media screen and (max-width: 700px) {
-
-.contactCol1 {
-	width:30%;
-	font-style:italic;
-	color: $neutralColor;
-	float: left;
-}
-
-.contactCol2 {
-	width:70%;
-	text-align: right;
-	float: left;
-}
-
-.homeContact {
-	width: 100%;
-	text-transform: uppercase;
-}
-
-.ContactButton {
-	width: 100%;
-	margin:30px 0;
-}
-
-.secondaryCol1 {
-	width:30%;
-}
-
-.secondaryCol2 {
-	width:70%;
-}
-
-.footerContact{
-	width: 100%;
-	padding: 0;
-	margin:0;
-}
-
-.footerCenter, .footerRight {
-	display:none;
-}
-
-.footerContactCol1, .footerContactCol2 {
-	width:50%;
-	padding: 0 5px;
-}
-}
-
-@media screen and (max-width: 670px) {
-
-h1 {
-	font-size: 20px;
-}
-
-h2{
-	font-size: 14px;
-}
-
-.sectionSmall {
-	width:100%;
-}
-
-.headerWrapper{
-	padding-top:5vh;
-	clear:both;
-}
-
-.selectedGallery{
-	height:200px;
-}
-
-.sixImgs{
- 	width: 98%;
-}
-
-.sixImgs:nth-of-type(n) {
-	margin: 1%;
-}
-
-.imgCaption{
-	bottom: 4px;
-	left:4px;
-	padding: 0;
-	margin: 0;
-}
-
-.secondaryCol1, .secondaryCol2 {
-	width:100%;
-	padding: 0 0 5px 0;
-}
-
-.faqQuestions span.right {
-	display:none;
-}
-
-}
-
-
-@media screen and (max-width: 430px) {
-
-.arrow{
-	padding: 2px 8px;
-}
-
-.faqMobileNav span.block{
-	display:block;
-}
-
-.recentPosts {
-	display:block;
-}
-
-.recentPostsMid {
-	display:none;
-}
-
+	.contactCol2 {
+		width:60%;
+		text-align: right;
+	}
+	.homeContact {
+		width: 100%;
+		float: none;
+		input{
+			width: 80%;
+		}
+	}
+	.contactButton {
+		width: 100%;
+		margin:20px 0;
+		float: none;
+	}
+	.recentPosts{
+		.footerContactCol1, .footerContactCol2{
+			float:left;
+			margin:0;
+			padding: 0;
+		}
+		.footerContactCol1{
+			width: 30%;
+			clear:left;
+		}
+		.footerContactCol2{
+			width: 70%;
+		}
+	}
 }
